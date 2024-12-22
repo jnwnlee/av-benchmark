@@ -155,7 +155,7 @@ To address issues with deprecated code in some underlying libraries, we have for
 This repository part of the accompanying code for MMAudio. To cite this repository, please use the following BibTeX entry:
 
 ```bibtex
-@inproceedings{cheng2024putting,
+@inproceedings{cheng2024taming,
   title={Taming Multimodal Joint Training for High-Quality Video-to-Audio Synthesis},
   author={Cheng, Ho Kei and Ishii, Masato and Hayakawa, Akio and Shibuya, Takashi and Schwing, Alexander and Mitsufuji, Yuki},
   booktitle={arXiv},
