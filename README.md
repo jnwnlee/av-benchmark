@@ -104,7 +104,7 @@ Run the following to extract visual features using `Synchformer` and `ImageBind`
 python extract_video.py --gt_cache <output cache directory> --video_path <directory containing videos> --gt_batch_size <batch size> --audio_length=<length of video in seconds>
 ```
 
-Some of the precomputed cache for VGGSound/AudioCaps can be found here: https://huggingface.co/datasets/hkchengrex/MMAudio-precomputed-results
+Some of the precomputed caches for VGGSound/AudioCaps can be found here: https://huggingface.co/datasets/hkchengrex/MMAudio-precomputed-results
 
 #### 2. **Text feature extraction (optional).**
 For text-to-audio applications, text features are extracted from input text data.
@@ -130,7 +130,7 @@ You can force feature extraction by specifying:
  - `--recompute_gt_cache` for ground-truth audio features.
  - `--recompute_pred_cache` for predicted audio features.
 
-This is useful if extraction was interrupted or the cache is corrupted.
+This is useful if the extraction is interrupted or the cache is corrupted.
 
 ### Evaluation
 
@@ -152,7 +152,7 @@ To address issues with deprecated code in some underlying libraries, we have for
 
 ## Citation
 
-This repository part of the accompanying code for MMAudio. To cite this repository, please use the following BibTeX entry:
+This repository is part of the accompanying code for MMAudio. To cite this repository, please use the following BibTeX entry:
 
 ```bibtex
 @inproceedings{cheng2024taming,
