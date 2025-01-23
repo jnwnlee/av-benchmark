@@ -9,6 +9,8 @@ from colorlog import ColoredFormatter
 from msclap import CLAP
 from tqdm import tqdm
 
+_clap_ckpt_path = Path(
+    __file__).parent.parent / 'weights' / 'music_speech_audioset_epoch_15_esc_89.98.pt'
 log = logging.getLogger()
 device = 'cuda'
 
@@ -39,8 +41,7 @@ def extract(args):
 
     laion_clap_model = laion_clap.CLAP_Module(enable_fusion=False,
                                               amodel='HTSAT-base').cuda().eval()
-    laion_clap_model.load_ckpt('./weights/music_speech_audioset_epoch_15_esc_89.98.pt',
-                               verbose=False)
+    laion_clap_model.load_ckpt(_clap_ckpt_path, verbose=False)
 
     ms_clap_model = CLAP(version='2023', use_cuda=True)
 

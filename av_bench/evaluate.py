@@ -11,6 +11,7 @@ from av_bench.synchformer.synchformer import Synchformer, make_class_grid
 from av_bench.utils import (unroll_dict, unroll_dict_all_keys, unroll_paired_dict,
                             unroll_paired_dict_with_key)
 
+_syncformer_ckpt_path = Path(__file__).parent.parent / 'weights' / 'synchformer_state_dict.pth'
 log = logging.getLogger()
 device = 'cuda'
 
@@ -25,7 +26,7 @@ def evaluate(gt_audio_cache: Path,
              skip_clap: bool = False) -> Dict[str, float]:
 
     sync_model = Synchformer().to(device).eval()
-    sd = torch.load('./weights/synchformer_state_dict.pth', weights_only=True)
+    sd = torch.load(_syncformer_ckpt_path, weights_only=True)
     sync_model.load_state_dict(sd)
 
     gt_audio_cache = gt_audio_cache.expanduser()

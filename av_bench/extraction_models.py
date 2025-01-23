@@ -14,6 +14,7 @@ from av_bench.vggish.vggish import VGGish
 
 _clap_ckpt_path = Path(
     __file__).parent.parent / 'weights' / 'music_speech_audioset_epoch_15_esc_89.98.pt'
+_syncformer_ckpt_path = Path(__file__).parent.parent / 'weights' / 'synchformer_state_dict.pth'
 
 
 class ExtractionModels(nn.Module):
@@ -49,7 +50,7 @@ class ExtractionModels(nn.Module):
         self.ms_clap = CLAP(version='2023', use_cuda=True)
 
         self.synchformer = Synchformer().eval()
-        sd = torch.load('./weights/synchformer_state_dict.pth', weights_only=True)
+        sd = torch.load(_syncformer_ckpt_path, weights_only=True)
         self.synchformer.load_state_dict(sd)
 
         # from synchformer
