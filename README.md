@@ -64,7 +64,7 @@ Download [music_speech_audioset_epoch_15_esc_89.98.pt](https://huggingface.co/lu
 
 ```bash
 mkdir weights
-wget https://huggingface.co/lukewys/laion_clap/blob/main/music_speech_audioset_epoch_15_esc_89.98.pt -O weights/music_speech_audioset_epoch_15_esc_89.98.pt
+wget https://huggingface.co/lukewys/laion_clap/resolve/main/music_speech_audioset_epoch_15_esc_89.98.pt -O weights/music_speech_audioset_epoch_15_esc_89.98.pt
 wget https://github.com/hkchengrex/MMAudio/releases/download/v0.1/synchformer_state_dict.pth -O weights/synchformer_state_dict.pth
 ```
 
