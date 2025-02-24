@@ -58,7 +58,7 @@ pip install -e .
 
 Download [music_speech_audioset_epoch_15_esc_89.98.pt](https://huggingface.co/lukewys/laion_clap/resolve/main/music_speech_audioset_epoch_15_esc_89.98.pt) and [Synchformer](https://github.com/hkchengrex/MMAudio/releases/download/v0.1/synchformer_state_dict.pth) and put them in `weights`.
 
-(Execute the followings when you are in the root directory of this repository)
+(Execute the following when you are in the root directory of this repository)
 
 ```bash
 mkdir weights
