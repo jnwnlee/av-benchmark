@@ -46,8 +46,6 @@ We recommend using a [miniforge](https://github.com/conda-forge/miniforge) envir
 
 Before proceeding, install PyTorch with the appropriate CUDA version from the [official PyTorch website](https://pytorch.org/).
 
-Please install pytorch with the appropriate cuda versions via https://pytorch.org/ before proceeding.
-
 ### 3. Clone and Install the Repository
 
 ```bash
