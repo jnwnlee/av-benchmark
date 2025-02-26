@@ -46,8 +46,6 @@ We recommend using a [miniforge](https://github.com/conda-forge/miniforge) envir
 
 Before proceeding, install PyTorch with the appropriate CUDA version from the [official PyTorch website](https://pytorch.org/).
 
-Please install pytorch with the appropriate cuda versions via https://pytorch.org/ before proceeding.
-
 ### 3. Clone and Install the Repository
 
 ```bash
@@ -58,13 +56,13 @@ pip install -e .
 
 ### 4. Download Pretrained Models
 
-Download [music_speech_audioset_epoch_15_esc_89.98.pt](https://huggingface.co/lukewys/laion_clap/blob/main/music_speech_audioset_epoch_15_esc_89.98.pt) and [Synchformer](https://github.com/hkchengrex/MMAudio/releases/download/v0.1/synchformer_state_dict.pth) and put them in `weights`.
+Download [music_speech_audioset_epoch_15_esc_89.98.pt](https://huggingface.co/lukewys/laion_clap/resolve/main/music_speech_audioset_epoch_15_esc_89.98.pt) and [Synchformer](https://github.com/hkchengrex/MMAudio/releases/download/v0.1/synchformer_state_dict.pth) and put them in `weights`.
 
-(Execute when you are in the root directory of the repository)
+(Execute the following when you are in the root directory of this repository)
 
 ```bash
 mkdir weights
-wget https://huggingface.co/lukewys/laion_clap/blob/main/music_speech_audioset_epoch_15_esc_89.98.pt -O weights/music_speech_audioset_epoch_15_esc_89.98.pt
+wget https://huggingface.co/lukewys/laion_clap/resolve/main/music_speech_audioset_epoch_15_esc_89.98.pt -O weights/music_speech_audioset_epoch_15_esc_89.98.pt
 wget https://github.com/hkchengrex/MMAudio/releases/download/v0.1/synchformer_state_dict.pth -O weights/synchformer_state_dict.pth
 ```
 

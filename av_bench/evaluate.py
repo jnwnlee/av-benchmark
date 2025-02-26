@@ -12,6 +12,7 @@ from av_bench.utils import (unroll_dict, unroll_dict_all_keys, unroll_paired_dic
                             unroll_paired_dict_with_key)
 from av_bench.paths import SYNCHFORMER_PATH
 
+_syncformer_ckpt_path = Path(__file__).parent.parent / 'weights' / 'synchformer_state_dict.pth'
 log = logging.getLogger()
 device = 'cuda'
 

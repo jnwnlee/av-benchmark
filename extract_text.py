@@ -41,8 +41,7 @@ def extract(args):
 
     laion_clap_model = laion_clap.CLAP_Module(enable_fusion=False,
                                               amodel='HTSAT-base').cuda().eval()
-    laion_clap_model.load_ckpt(CLAP_LAION_PATH,
-                               verbose=False)
+    laion_clap_model.load_ckpt(CLAP_LAION_PATH, verbose=False)
 
     ms_clap_model = CLAP(version='2023', use_cuda=True)
 
