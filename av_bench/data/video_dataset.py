@@ -81,16 +81,24 @@ class VideoDataset(Dataset):
         if ib_chunk is None:
             raise RuntimeError(f'IB video returned None {video_path}')
         if ib_chunk.shape[0] < self.ib_expected_length:
-            raise RuntimeError(
-                f'IB video too short {video_path}, expected {self.ib_expected_length}, got {ib_chunk.shape[0]}'
-            )
+            if self.ib_expected_length - ib_chunk.shape[0] == 1:
+                # copy the last frame to make it the right length
+                ib_chunk = torch.cat([ib_chunk, ib_chunk[-1:]], dim=0)
+            else:
+                raise RuntimeError(
+                    f'IB video too short {video_path}, expected {self.ib_expected_length}, got {ib_chunk.shape[0]}'
+                )
 
         if sync_chunk is None:
             raise RuntimeError(f'Sync video returned None {video_path}')
         if sync_chunk.shape[0] < self.sync_expected_length:
-            raise RuntimeError(
-                f'Sync video too short {video_path}, expected {self.sync_expected_length}, got {sync_chunk.shape[0]}'
-            )
+            if self.sync_expected_length - sync_chunk.shape[0] <= 3:
+                # copy the last frame to make it the right length
+                sync_chunk = torch.cat([sync_chunk, sync_chunk[-1:].repeat(self.sync_expected_length - sync_chunk.shape[0], 1, 1, 1)], dim=0)
+            else:
+                raise RuntimeError(
+                    f'Sync video too short {video_path}, expected {self.sync_expected_length}, got {sync_chunk.shape[0]}'
+                )
 
         # truncate the video
         ib_chunk = ib_chunk[:self.ib_expected_length]
