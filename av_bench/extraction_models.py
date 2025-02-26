@@ -11,9 +11,9 @@ from msclap import CLAP
 from av_bench.panns import Cnn14
 from av_bench.synchformer.synchformer import Synchformer
 from av_bench.vggish.vggish import VGGish
+from av_bench.paths import CLAP_LAION_PATH, SYNCHFORMER_PATH
 
-_clap_ckpt_path = Path(
-    __file__).parent.parent / 'weights' / 'music_speech_audioset_epoch_15_esc_89.98.pt'
+_clap_ckpt_path = CLAP_LAION_PATH
 
 
 class ExtractionModels(nn.Module):
@@ -49,7 +49,7 @@ class ExtractionModels(nn.Module):
         self.ms_clap = CLAP(version='2023', use_cuda=True)
 
         self.synchformer = Synchformer().eval()
-        sd = torch.load('./weights/synchformer_state_dict.pth', weights_only=True)
+        sd = torch.load(SYNCHFORMER_PATH, weights_only=True)
         self.synchformer.load_state_dict(sd)
 
         # from synchformer

@@ -1,0 +1,2 @@
+SYNCHFORMER_PATH = '/mnt/image-net-full/junwon/mmaudio/ext_weights/synchformer_state_dict.pth'
+CLAP_LAION_PATH = '/mnt/image-net-full/junwon/mmaudio/ext_weights/music_speech_audioset_epoch_15_esc_89.98.pt'

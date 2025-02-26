@@ -13,6 +13,7 @@ from tqdm import tqdm
 from av_bench.args import get_eval_parser
 from av_bench.data.video_dataset import VideoDataset, error_avoidance_collate
 from av_bench.synchformer.synchformer import Synchformer
+from av_bench.paths import SYNCHFORMER_PATH
 
 log = logging.getLogger()
 device = 'cuda'
@@ -98,7 +99,7 @@ def extract(args):
                         collate_fn=error_avoidance_collate)
 
     sync_model = Synchformer().to(device).eval()
-    sd = torch.load('./weights/synchformer_state_dict.pth', weights_only=True)
+    sd = torch.load(SYNCHFORMER_PATH, weights_only=True)
     sync_model.load_state_dict(sd)
 
     cmp_encode_video_with_sync = torch.compile(encode_video_with_sync)
